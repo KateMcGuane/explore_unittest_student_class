@@ -39,6 +39,10 @@ class TestStudent(unittest.TestCase):
         self.assertTrue(self.student.naughty_list)
 
 
+    def test_apply_extension(self):
+        old_end_date = self.end_date
+        apply_extension(10)
+
 
 if __name__ == "__main__":
     unittest.main()
