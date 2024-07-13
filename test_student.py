@@ -70,10 +70,9 @@ class TestStudent(unittest.TestCase):
     def test_course_schedule_failed(self):
         with patch("student.requests.get") as mocked_get:
             mocked_get.return_value.ok = False
-            mocked_get.return_value.text = "Something went wrong"
 
             schedule = self.student.course_schedule()
-            self.assertEqual(schedule, "Something went wrong with the request")
+            self.assertEqual(schedule, "Something went wrong")
 
 
 if __name__ == "__main__":
