@@ -21,3 +21,11 @@
 #### Reflective Questions
 - What should the value of return_value.ok be to mock a failed request?
 - Where did we define the string that should be returned for a failed request?
+
+
+### Additional Challenges
+Try implementing the following:
+- A method to return a student’s start date
+- Adapting the code to take leap years into consideration when calculating the end date
+- Adding a property to display whether a student has been given an extension
+- Keeping track of a student’s scores for their projects
