@@ -1,4 +1,4 @@
-### Steps for Creating a new test and method using TDD
+### Steps for creating a new test and method using TDD
 
 #### test_student.py
 1. Create a new test method called test_apply_extension
