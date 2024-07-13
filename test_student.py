@@ -1,18 +1,19 @@
 import unittest
 from student import Student
 from datetime import timedelta
+from unittest.mock import patch
 
 
 class TestStudent(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        print("setUpClass")
+        print("setUp Class")
 
     
     @classmethod
     def tearDownClass(cls):
-        print("tearDownClass")
+        print("tearDown Class")
 
 
     def setUp(self):
@@ -55,6 +56,15 @@ class TestStudent(unittest.TestCase):
         self.student.apply_extension(5)
         self.assertEqual(self.student.end_date, self.student._start_date + timedelta(days=370))
         """
+
+
+    def test_course_schedule_success(self):
+        with patch("student.requests.get") as mocked_get:
+            mocked_get.return_value.ok = True
+            mocked_get.return_value.text = "Success"
+
+            schedule = self.student.course_schedule()
+            self.assertEqual(schedule, "Success")
 
 
 if __name__ == "__main__":
